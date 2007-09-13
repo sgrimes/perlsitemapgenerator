@@ -22,18 +22,17 @@ In order to create a configuration file for your site, you must have the followi
   
   #. Open the *example_config.xml* file in a text editor. Save it as a new file (such as *config.xml* or *mysite_config.xml*).
   #. Locate the site definition section:
-
-      {{{<site 
+      {{{
+      <site 
       base_url="http://www.example.com/" 
       store_into="/var/www/docroot/sitemap.xml.gz"
-      verbose="1">}}}	
-
+      verbose="1">
+      }}}	
   #. Change the *base_url* value to the URL for your site.
   #. Change the *store_into* value to the path on your web server where you want to store the Sitemap and the filename you want to use for the Sitemap. Generally, this is the path to the base URL since Google can only accept URLs that are at the same level as or subdirectories of the directory that holds the Sitemap. You can specify a relative path from the directory where you upload the script or a complete path from the root of your web server. If you upload the script to your base URL directory, you can simply specify the filename.
   #. Locate the generation method sections that begin with ** *MODIFY or DELETE* **. Each of these sections corresponds to a method for generating a Sitemap.
   #. Delete the sections for the methods you aren’t going to use.
   #. Follow the instructions below for the methods you are going to use.
-
   *URL*
 
   Locate the following section:
