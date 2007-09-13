@@ -61,7 +61,7 @@ In order to create a configuration file for your site, you must have the followi
 
   Use this format for each of the URLs you want to include. The *changefreq* attribute gives Google a general idea of how often the URL is updated. This helps Google know how often to visit the page for new content. The *priority* attribute gives Google information about the relative importance of this page compared to the other pages of your site. This attribute has no effect on how Google compares your page to pages on other sites, it just helps Google know which pages of your site that you think are most important.
 
-*URL List*
+  * *URL List*
 
   Locate the following section:
   {{{
@@ -83,7 +83,7 @@ In order to create a configuration file for your site, you must have the followi
   }}}
   For each URL you include in the text file, you can specify the last modification date, change frequency, and priority. See the URLlist text file reference section for complete information about the structure of this file. 
 
-*Directory paths*
+  * *Directory paths*
 
   Locate the following section:
   {{{
@@ -114,7 +114,7 @@ In order to create a configuration file for your site, you must have the followi
 
   You can use the *default_file* parameter to specify the filename that your server uses as the default page for a directory. In the above example, */var/www/docroot* resolves to {{{http://www.example.com/index.html}}}. You are not required to specify this. However, if you do, the Sitemap Generator will include the page that maps to each subdirectory only once (rather than list both the directory URL and filename URL) and will use the last modified date of the file (rather than the directory) to extract the lastmod attribute for that page. 
 
-*Access logs*
+  * *Access logs*
 
   Locate the following section:
   {{{
@@ -138,7 +138,7 @@ In order to create a configuration file for your site, you must have the followi
   }}}
   The Sitemap Generator assigns priority to URLs it finds in the logs based on how often each URL is accessed. For instance, a URL that has been accessed 100 times will be given a higher priority than a URL that has been accessed twice. The actual priority assignment is relative and depends on each URL as compared to other URLs in the site.
 
-*Sitemap*
+  * *Sitemap*
 
   Locate the following section:
   {{{
