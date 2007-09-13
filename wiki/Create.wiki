@@ -11,7 +11,6 @@ In order to create a configuration file for your site, you must have the followi
  * The base URL for your site (such as {{{http://www.example.com/}}}). Only URLs that begin with this base URL can be included in the Sitemap. Ensure that you include the protocol (such as {{{http://}}}). For instance, {{{http://www.google.com}}} is a valid base url, but {{{www.google.com}}} is not.
  * The web server path to the location where you want to store the Sitemap. Generally, this is the path to the base URL as the Sitemap cannot contain URLs that are in a higher-level directory from the location of the Sitemap. When you run the Google Sitemap Generator, it creates the Sitemap and places it in the location you specify.
  * The methods you want the Sitemap Generator to use to create your Sitemap. You can use any combination of methods. The following methods are available:
-
     * *URL* —list individual URLs in this section of the configuration file, along with information about each URL. You would generally use this method in conjunction with another method to manually include additional URLs that other methods wouldn't pick up.
     * *URL list* —point the configuration file to a text file that contains a list of URLs. You might want to use this method if this text file already exists or if you use a script to generate a list of URLs.
     * *Directory paths* —specify the directory paths for your site and corresponding URLs to those paths. The Sitemap Generator will create a list of URLs based on the contents of those directories. You might want to use this method if your site consists of static HTML files.
@@ -37,5 +36,30 @@ In order to create a configuration file for your site, you must have the followi
 *URL*
 
   Locate the following section:
+  {{{
+  <!-- ** MODIFY or DELETE ** 
+  "url" nodes specify individual URLs to include in the map. <br>
+
+  Required attributes: 
+  href - the URL
+
+  Optional attributes: 
+  lastmod - timestamp of last modification (ISO8601 format) 
+  changefreq - how often content at this URL is usually updated
+  priority - value 0.0 to 1.0 of relative importance in your site 
+  --> 
+
+  <url href="http://www.example.com/stats?q=name" /> 
+  <url 
+  href="http://www.example.com/stats?q=age" 
+  lastmod="2004-11-14T01:00:00-07:00" 
+  changefreq="yearly" 
+  priority="0.3"
+  /> 
+  }}}
+  This section gives two examples: the first includes only the required attribute and the second includes the required attribute as well as the optional attributes.
+
+  Use this format for each of the URLs you want to include. The changefreq attribute gives Google a general idea of how often the URL is updated. This helps Google know how often to visit the page for new content. The priority attribute gives Google information about the relative importance of this page compared to the other pages of your site. This attribute has no effect on how Google compares your page to pages on other sites, it just helps Google know which pages of your site that you think are most important.
+
 
 [Download << 1. Downloading the program files] | [Upload 3. Uploading the necessary files >>]
