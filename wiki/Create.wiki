@@ -33,7 +33,7 @@ In order to create a configuration file for your site, you must have the followi
   #. Delete the sections for the methods you aren’t going to use.
   #. Follow the instructions below for the methods you are going to use.
 
-* {{{URL}}}*
+  * *URL*
 
   Locate the following section:
   {{{
@@ -158,6 +158,7 @@ In order to create a configuration file for your site, you must have the followi
 <sitemap path="/var/www/docroot/subpath/sitemap*.xml" /> 
   }}}
   The Sitemap Generator extracts all URLs and the optional data listed for each URL for every Sitemap you list and creates one Sitemap with this information. At this time, we can't guarantee that this method will work Sitemaps created with tools other than the Sitemap Generator.
+
   8. Locate the filter definition section:
   {{{
   <!-- ********************************************************         
