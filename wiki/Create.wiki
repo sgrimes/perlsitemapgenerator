@@ -4,12 +4,38 @@
 
 ===2. Creating a configuration file===
 
-This section provides step-by-step instructions for creating a configuration file. It also provides a complete reference of the options available. If you are creating Mobile Sitemaps, see the additional mobile guidelines.
+This section provides step-by-step instructions for creating a configuration file. It also provides a complete reference of the options available. If you are creating [http://www.google.com/support/webmasters/bin/answer.py?answer=34627&topic=8493 Mobile Sitemaps], see the additional mobile guidelines.
 
 In order to create a configuration file for your site, you must have the following information:
 
- * The base URL for your site (such as http://www.example.com/). Only URLs that begin with this base URL can be included in the Sitemap. Ensure that you include the protocol (such as http://). For instance, http://www.google.com is a valid base url, but www.google.com is not.
+ * The base URL for your site (such as *http://www.example.com/*). Only URLs that begin with this base URL can be included in the Sitemap. Ensure that you include the protocol (such as *http://*). For instance, *http://www.google.com* is a valid base url, but *www.google.com* is not.
  * The web server path to the location where you want to store the Sitemap. Generally, this is the path to the base URL as the Sitemap cannot contain URLs that are in a higher-level directory from the location of the Sitemap. When you run the Google Sitemap Generator, it creates the Sitemap and places it in the location you specify.
-  * The methods you want the Sitemap Generator to use to create your Sitemap. You can use any combination of methods. The following methods are available:
+ * The methods you want the Sitemap Generator to use to create your Sitemap. You can use any combination of methods. The following methods are available:
+
+    * *URL* —list individual URLs in this section of the configuration file, along with information about each URL. You would generally use this method in conjunction with another method to manually include additional URLs that other methods wouldn't pick up.
+    * *URL list* —point the configuration file to a text file that contains a list of URLs. You might want to use this method if this text file already exists or if you use a script to generate a list of URLs.
+    * *Directory paths* —specify the directory paths for your site and corresponding URLs to those paths. The Sitemap Generator will create a list of URLs based on the contents of those directories. You might want to use this method if your site consists of static HTML files.
+    * *Access logs* —point to the path to your log files. The Sitemap Generator will create a list of URLs based on the URLs included in the logs. You might want to use this method if your site consists of dynamic pages.
+    * *Sitemap* —point to existing Sitemaps that you have created with the Sitemap Generator. The Sitemap Generator will create a single Sitemap that includes the URLs contained in each Sitemap. You could use this method if you have already created several smaller Sitemaps that you want to combine into one larger Sitemap.
+
+*Create the configuration file as follows:*
+  
+  #. Open the *example_config.xml* file in a text editor. Save it as a new file (such as *config.xml* or *mysite_config.xml*).
+  #. Locate the site definition section:
+
+      {{{<site 
+      base_url="http://www.example.com/" 
+      store_into="/var/www/docroot/sitemap.xml.gz"
+      verbose="1">}}}	
+
+  #. Change the *base_url* value to the URL for your site.
+  #. Change the *store_into* value to the path on your web server where you want to store the Sitemap and the filename you want to use for the Sitemap. Generally, this is the path to the base URL since Google can only accept URLs that are at the same level as or subdirectories of the directory that holds the Sitemap. You can specify a relative path from the directory where you upload the script or a complete path from the root of your web server. If you upload the script to your base URL directory, you can simply specify the filename.
+  #. Locate the generation method sections that begin with ** *MODIFY or DELETE* **. Each of these sections corresponds to a method for generating a Sitemap.
+  #. Delete the sections for the methods you aren’t going to use.
+  #. Follow the instructions below for the methods you are going to use.
+
+  *URL*
+
+  Locate the following section:
 
 [Download << 1. Downloading the program files] | [Upload 3. Uploading the necessary files >>]
