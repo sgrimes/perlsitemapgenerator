@@ -2,7 +2,7 @@
 #labels Phase-Deploy
 [Upload << 3. Uploading the necessary files] | [Add 5. Adding the generated sitemap>>]
 
-===4. Running the Perl Sitemap Generator script===
+===4. Running the Perl Sitemap Generator script (sitemap_gen.pl)===
 
 In order to run the Sitemap Generator, you’ll need to connect to your web server. The method you use to connect depends on your environment. For instance, you can generally access a UNIX-based server using SSH. For more information on connecting to your web server and running scripts, talk to your web host.
 
