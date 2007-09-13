@@ -314,10 +314,12 @@ Optional tag that you can use to build rules that include or exclude specific fi
 <filter action="drop" type="wildcard" pattern="*/internal/*" />
 }}}
 
-||action||optional||The action the filter should take. Valid values are: * drop - excludes matching URLs. This is the default action, so if no action is specified, the generator assumes "drop". * pass - includes matching URLs.||
+||action||optional||The action the filter should take. Valid values are: 
+*drop* - excludes matching URLs. This is the default action, so if no action is specified, the generator assumes "drop". 
+*pass* - includes matching URLs.||
 ||type||optional||The type of filtering. Valid values are:
-    * wildcard - standard path wildcards (? and *) are used to compare against URLs. This is the default type, so if no type is specified, the generator assumes "wildcard".
-    * regexp - regular expressions are used.||
+*wildcard* - standard path wildcards (? and *) are used to compare against URLs. This is the default type, so if no type is specified, the generator assumes "wildcard".
+*regexp* - regular expressions are used.||
 ||pattern||required||Specifies the pattern to match against.||
 
 *Encodings*
