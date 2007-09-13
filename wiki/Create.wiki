@@ -1,6 +1,6 @@
-#summary Instructions for using the Perl Sitemap Generator
+#summary Instructions for using the Perl Sitemap Generator - part 2
 #labels Featured,Phase-Deploy
-[Download << 1. Downloading the files] | [Upload 3. Uploading the necessary files >>]
+[Download << 1. Downloading the program files] | [Upload 3. Uploading the necessary files >>]
 
 ===2. Creating a configuration file===
 
@@ -12,4 +12,4 @@ In order to create a configuration file for your site, you must have the followi
  * The web server path to the location where you want to store the Sitemap. Generally, this is the path to the base URL as the Sitemap cannot contain URLs that are in a higher-level directory from the location of the Sitemap. When you run the Google Sitemap Generator, it creates the Sitemap and places it in the location you specify.
   * The methods you want the Sitemap Generator to use to create your Sitemap. You can use any combination of methods. The following methods are available:
 
-[Download << 1. Downloading the files] | [Upload 3. Uploading the necessary files >>]
+[Download << 1. Downloading the program files] | [Upload 3. Uploading the necessary files >>]
