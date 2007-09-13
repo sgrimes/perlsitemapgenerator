@@ -315,7 +315,7 @@ Optional tag that you can use to build rules that include or exclude specific fi
 }}}
 
 ||action||optional||The action the filter should take. Valid values are: *drop* - excludes matching URLs. This is the default action, so if no action is specified, the generator assumes "drop". *pass* - includes matching URLs.||
-||type||optional||The type of filtering. Valid values are: *wildcard* - standard path wildcards (? and *) are used to compare against URLs. This is the default type, so if no type is specified, the generator assumes "wildcard". *regexp* - regular expressions are used.||
+||type||optional||The type of filtering. Valid values are: *wildcard* - standard path wildcards ({{{?}}} and {{{*}}}) are used to compare against URLs. This is the default type, so if no type is specified, the generator assumes "wildcard". *regexp* - regular expressions are used.||
 ||pattern||required||Specifies the pattern to match against.||
 
 *Encodings*
@@ -326,4 +326,27 @@ Files referenced by your configuration file, either URL lists or web server logs
     * *encoding="ascii"* is a subset of UTF-8 so you don't have to specify it
     * *encoding="iso-8859-1"* is common for many west European languages 
 
+*Additional information for creating a mobile configuration file*
+
+You create a configuration file for a Mobile Sitemap in the same way as for a non-mobile Sitemap. However, you must create a separate config file for each markup language and run the Sitemap Generator with each config file separately so that you create a separate Sitemap for each.
+
+Each config file must:
+
+    * Specify a different filename for the *store_into* value.
+    * Use filters to specify the URLs to exclude and include for the markup language. Remember that each Sitemap should include URLs for only one markup language. This means that the same URL may be included in multiple Sitemaps, if those URLs serve multiple markup languages.
+
+*Examples of filtering*
+
+Below are some examples of how you can use extension-based filters to generate Mobile Sitemaps for different markup languages. The specific filtering you use should be based on the types of markup languages used in your site, and how you specify each type. If you have implemented the details of your site differently (for instance, you may organize URLs with different markup languages in separate folders), you should filter based on the specifics of your site implementation. Remember that filters are applied in the order you list them in the config file. So, the first filter you should list is a "pass" action that specifies the URLs you want to include in the Sitemap.
+
+To create a Sitemap for WML (WAP 1.2) content:
+{{{
+<filter action="pass" type="wildcard" pattern="*.wml" />
+<filter action="drop" type="wildcard" pattern="*.*" />
+}}}
+To create a Sitemap for XHTML mobile profile (WAP 2.0) content:
+{{{
+<filter action="pass" type="wildcard" pattern="*.xhtml" />
+<filter action="drop" type="wildcard" pattern="*.*" />
+}}}
 [Download << 1. Downloading the program files] | [Upload 3. Uploading the necessary files >>]
