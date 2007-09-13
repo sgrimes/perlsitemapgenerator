@@ -86,7 +86,7 @@ In order to create a configuration file for your site, you must have the followi
 *Directory paths*
 
   Locate the following section:
-
+  {{{
   <!-- ** MODIFY or DELETE ** 
   "directory" nodes tell the script to walk the file system and 
   include all files and directories in the Sitemap.
