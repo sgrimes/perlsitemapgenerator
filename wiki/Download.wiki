@@ -1,6 +1,6 @@
 #summary Instructions - part 1: Downloading the Perl Sitemap Generator program files
 #labels Phase-Deploy
-[http://code.google.com/p/perlsitemapgenerator [<< Project Home]] | [Create 2. Creating a configuration file >>]
+[[http://code.google.com/p/perlsitemapgenerator << Project Home]] | [Create 2. Creating a configuration file >>]
 
 ===1. Downloading the Perl Sitemap Generator program files===
 The Perl Sitemap Generator files are available in ZIP and GZ archive formats from the following location:
