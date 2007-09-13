@@ -1,6 +1,6 @@
 #labels Featured,Phase-Deploy
-==1. Downloading the Sitemap Generator program files==
-{{{                                              [perlsitemapgenerator Project Home]}}}
+===1. Downloading the Sitemap Generator program files===
+                                   [perlsitemapgenerator Project Home]
 The Perl Sitemap Generator files are available in ZIP and GZ archive formats from the following location:
 
 http://code.google.com/p/perlsitemapgenerator/downloads/list
