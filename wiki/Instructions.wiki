@@ -1,6 +1,8 @@
+#summary using the Perl Sitemap Generator
 #labels Featured,Phase-Deploy
-===1. Downloading the Sitemap Generator program files===
-                                                         [http://code.google.com/p/perlsitemapgenerator Project Home]
+[http://code.google.com/p/perlsitemapgenerator << Project Home] | [CreateConfig 2. Creating a configuration file >>]
+
+===1. Download the Sitemap Generator program files===
 The Perl Sitemap Generator files are available in ZIP and GZ archive formats from the following location:
 
 http://code.google.com/p/perlsitemapgenerator/downloads/list
@@ -11,3 +13,5 @@ Once you download the archive, extract it into a local directory. Locate the fol
     * *sitemap_gen.pl* —the perl script that generates your Sitemap
     * *example_config.xml* —the template configuration file you'll use to specify the configuration for your site
     * *example_urllist.txt* —the template URL list you can use if you wish to create a Sitemap based on a set of URLs that you specify
+
+[http://code.google.com/p/perlsitemapgenerator << Project Home] | [CreateConfig 2. Creating a configuration file >>]
