@@ -348,4 +348,5 @@ To create a Sitemap for XHTML mobile profile (WAP 2.0) content:
 <filter action="pass" type="wildcard" pattern="*.xhtml" />
 <filter action="drop" type="wildcard" pattern="*.*" />
 }}}
+
 [Download << 1. Downloading the program files] | [Upload 3. Uploading the necessary files >>]
