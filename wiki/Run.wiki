@@ -10,14 +10,6 @@ Once you have copied the files to your web server, you'll need to run the Sitema
 
 {{{perl sitemap_gen.pl --config=<path/config.xml>}}}
 
-For instance, a UNIX-based command line might look similar to this:
-
-Python command
-
-A MS-DOS-based command shell might look similar to this:
-
-Python command
-
 *Tip:* If you're testing your configuration and are not ready to submit your Sitemap, the following syntax will prevent Sitemap Generator from contacting Google:
 
        {{{$ perl sitemap_gen.pl --config=config.xml --testing}}}
