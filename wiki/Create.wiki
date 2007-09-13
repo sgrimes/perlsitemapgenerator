@@ -275,7 +275,6 @@ http://www.example.com/abc/def?x=12&y=23 changefreq=weekly priority=0.3
 
 Optional tag that you can use to specify directories in your site so the Sitemap Generator can create a list of URLs from the files found in those directories.
 {{{
---> 
 <directory  path="/var/www/icons"    url="http://www.example.com/images/" />
 <directory
    path="/var/www/docroot"
