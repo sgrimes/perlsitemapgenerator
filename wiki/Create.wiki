@@ -211,4 +211,120 @@ they are.
 
  9. Once you have made all the changes for your site, save the file.
 
+*Config File Syntax Reference*
+
+A complete explanation of the config file syntax is below. Each tag begins with a code sample, followed by a description of the attributes.
+
+*site*
+Required tag at the beginning of each config file.
+{{{
+<site
+base_url="http://www.example.com/"
+store_into="/var/www/html/sitemap.xml.gz"
+verbose="1"
+supress_search_engine_notify="1"
+default_encoding="UTF-8">
+}}}
+
+||base_url||required||The HTTP path of the base of your website - only URLs that begin with this base can be included in the Sitemap||
+||store_into||required||The web server path to the desired output file. The script will create this file - there's no need to create the file before running the script.||
+||verbose||optional||Enter a number from 0-3, with higher numbers corresponding to increased debug information||
+||suppress_search_engine_notify||optional||Disable search engine notification by entering "1" for testing purposes||
+||default_encoding||optional||Specify a character encoding to be applied to file system paths and URLs||
+
+*url*
+Optional tag that you can use to list each URL in your site.
+{{{
+<url
+href="http://www.example.com/stats?q=age" 
+lastmod="2004-11-14T01:00:00-07:00" 
+changefreq="yearly" 
+priority="0.3"
+/> 
+}}}
+
+||href||required||The HTTP path of the base of your website - only URLs that begin with this base can be included in the Sitemap||
+||lastmod||optional||The time the URL was last modified in [http://www.w3.org/TR/NOTE-datetime W3C Datetime] format (YYYY-MM-DDThh:mm:ss+00:00). You may omit the time portion. Examples:
+  "2005-02-21T18:00:15+00:00"
+  "2005-02-21"||
+||changefreq||optional||The frequency with which the URL is likely to change. This is considered a hint and not a command. The value must be one of "always", "hourly", "daily", "weekly", "monthly", "yearly", or "never".||
+||priority||optional||The priority of this page relative to other pages on the same site. The value is a number between 0.0 and 1.0, where 0.0 is the lowest priority and 1.0 is the highest priority. The priority can affect the order that search engines select URLs to explore on your site. Since the priority is relative, it is only used to select between URLs within your own site; the priority of your pages will not be compared to the priority of pages on other sites.||
+
+*urllist*
+Optional tag that you can use to point to a text file that contains a list of the URLs in your site.
+{{{
+<urllist path="/var/www/html/urllist.txt" encoding="UTF-8" />
+}}}
+
+||path||required||The path and filename of the .txt file. You can specify either a relative or complete path.||
+||encoding||optional||The encoding of the file, if not UTF-8.||
+
+The *urllist.txt* file is a simple text file containing a list of URLs to map. You can also include optional attributes for each URL. Attributes are entered on the same line as the URL and are separated by a single space. For example:
+{{{
+http://www.example.com/abc/something
+http://www.example.com/abc/xyy.pdf lastmod=2001-12-31T14:05:06+00:00
+http://www.example.com/abc/def?x=12&y=23 changefreq=weekly priority=0.3
+}}}
+
+||lastmod||optional||The time the URL was last modified in W3C Datetime format (YYYY-MM-DDThh:mm:ss+00:00). You may omit the time portion. Examples:
+  "2005-02-21T18:00:15+00:00"
+  "2005-02-21"||
+||changefreq||optional||The frequency with which the URL is likely to change. This is considered a hint and not a command. The value must be one of "always", "hourly", "daily", "weekly", "monthly", "yearly", or "never".||
+||priority||optional||The priority of this page relative to other pages on the same site. The value is a number between 0.0 and 1.0, where 0.0 is the lowest priority and 1.0 is the highest priority. The priority can affect the order that search engines select URLs to explore on your site. Since the priority is relative, it is only used to select between URLs within your own site; the priority of your pages will not be compared to the priority of pages on other sites.||
+
+*directory*
+Optional tag that you can use to specify directories in your site so the Sitemap Generator can create a list of URLs from the files found in those directories.
+{{{
+--> 
+<directory  path="/var/www/icons"    url="http://www.example.com/images/" />
+<directory
+   path="/var/www/docroot"
+   url="http://www.example.com/"
+   default_file="index.html"
+/>
+}}}
+
+||path||required||States the initial path. Sitemap Generator will traverse this directory and all subdirectories.||
+||url||required||Specifies the URL equivalent of the path value.||
+||default_file||optional||Specifies the default file for a directory on the server.||
+
+*accesslog*
+Optional tag that you can use to specify the path and filename of IIS and Apache-style access logs so the Sitemap Generator can automatically pick up URLs from them.
+{{{
+<accesslog path="/etc/httpd/logs/access-0.log" encoding="UTF-8"/>
+}}}
+
+||path||required||States the path to the file.||
+||encoding||optional||Specifies encoding of the file, if not UTF-8.||
+
+*sitemap*
+Optional tag that you can use to specify the path and filename of existing Sitemaps that you have created with the Sitemap Generator. The Sitemap Generator will create a single Sitemap that includes the URLs contained in each Sitemap.
+{{{
+<sitemap path="/var/www/docroot/subpath/sitemap.xml" />
+}}}
+
+||path||required||States the path to the Sitemap file.||
+
+*filter*
+Optional tag that you can use to build rules that include or exclude specific files. Filters are obeyed in the order in which they appear in the config.xml file. However, intermixing filter entries and input entries (url, urllist, directory, or accesslog) has no additional effect - every URL the Sitemap Generator adds to the Sitemap is first compared against every filter. If no filter matches a URL, the default is to include the URL in the Sitemap.
+{{{
+<filter action="drop" type="wildcard" pattern="*/internal/*" />
+}}}
+
+||action||optional||The action the filter should take. Valid values are:
+    * drop - excludes matching URLs. This is the default action, so if no action is specified, the generator assumes "drop".
+    * pass - includes matching URLs.||
+||type||optional||The type of filtering. Valid values are:
+    * wildcard - standard path wildcards (? and *) are used to compare against URLs. This is the default type, so if no type is specified, the generator assumes "wildcard".
+    * regexp - regular expressions are used.||
+||pattern||required||Specifies the pattern to match against.||
+
+*Encodings*
+
+Files referenced by your configuration file, either URL lists or web server logs, can use encodings other than the default UTF-8. You can specify alternate encodings in config.xml to affect how the Sitemap Generator reads your files. Some common encodings are:
+
+    * *encoding="utf-8"* is the assumed default
+    * *encoding="ascii"* is a subset of UTF-8 so you don't have to specify it
+    * *encoding="iso-8859-1"* is common for many west European languages 
+
 [Download << 1. Downloading the program files] | [Upload 3. Uploading the necessary files >>]
