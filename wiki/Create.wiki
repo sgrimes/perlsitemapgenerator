@@ -116,4 +116,28 @@ In order to create a configuration file for your site, you must have the followi
 
 *Access logs*
 
+  Locate the following section:
+  {{{
+  <!-- ** MODIFY or DELETE **
+  "accesslog" nodes tell the script to scan webserver log files to
+  extract URLs on your site.  Both Common Logfile Format (Apache's default 
+  logfile) and Extended Logfile Format (IIS's default logfile) can be read.
+				
+  Required attributes:
+   path - path to the file
+  Optional attributes:
+   encoding - encoding of the file if not US-ASCII
+   -->
+<accesslog path="/etc/httpd/logs/access.log" encoding="UTF-8" />
+<accesslog path="/etc/httpd/logs/access.log.0" encoding="UTF-8" />
+<accesslog path="/etc/httpd/logs/access.log.1.gz" encoding="UTF-8" />
+  }}}
+  This section gives three examples. You should replace these entries and include an entry for each log file. Ensure that the path value is the complete path and filename on your web server. If the log files are not encoded as US-ASCII or UTF-8, then use the optional *encoding* attribute to specify the encoding. Rather than list each log file, you can use wildcards. For instance, in the above example, you could include the following entry that would include all three log files:
+  {{{
+<accesslog path="/etc/httpd/logs/access.log*" encoding="UTF-8" /> 
+  }}}
+  The Sitemap Generator assigns priority to URLs it finds in the logs based on how often each URL is accessed. For instance, a URL that has been accessed 100 times will be given a higher priority than a URL that has been accessed twice. The actual priority assignment is relative and depends on each URL as compared to other URLs in the site.
+
+*Sitemap*
+
 [Download << 1. Downloading the program files] | [Upload 3. Uploading the necessary files >>]
