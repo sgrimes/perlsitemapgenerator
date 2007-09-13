@@ -83,4 +83,37 @@ In order to create a configuration file for your site, you must have the followi
   }}}
   For each URL you include in the text file, you can specify the last modification date, change frequency, and priority. See the URLlist text file reference section for complete information about the structure of this file. 
 
+*Directory paths*
+
+  Locate the following section:
+
+  <!-- ** MODIFY or DELETE ** 
+  "directory" nodes tell the script to walk the file system and 
+  include all files and directories in the Sitemap.
+
+  Required attributes:
+  path - path to begin walking from 
+  url - URL equivalent of that path 
+
+  Optional attributes:
+  default_file - name of the index or default file for directory URLs
+
+  --> 
+  <directory  path="/var/www/icons"    url="http://www.example.com/images/" />
+  <directory
+     path="/var/www/docroot"
+     url="http://www.example.com/"
+     default_file="index.html"
+  />
+  }}}
+  This section gives two examples. If all of your pages are contained in subdirectories of one path, then you only need to include one entry. However, if you have multiple paths to pages on your site, include an entry for each.
+
+  Remember that each URL must begin with the base URL you specified in step 3. For instance, the examples given in the *example_config.xml* file both have URLs that begin with {{{http://www.example.com/}}}. Therefore, both URLs are valid.
+
+  Replace the example entries with entries for your site. Many sites will only have one entry that points to the base URL. Ensure that *path* value is the complete path to the directory on your web server. Ensure that the *url* value is the complete URL, including the protocol (such as http) and a trailing slash, if required.
+
+  You can use the *default_file* parameter to specify the filename that your server uses as the default page for a directory. In the above example, */var/www/docroot* resolves to {{{http://www.example.com/index.html}}}. You are not required to specify this. However, if you do, the Sitemap Generator will include the page that maps to each subdirectory only once (rather than list both the directory URL and filename URL) and will use the last modified date of the file (rather than the directory) to extract the lastmod attribute for that page. 
+
+*Access logs*
+
 [Download << 1. Downloading the program files] | [Upload 3. Uploading the necessary files >>]
