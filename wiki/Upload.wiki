@@ -1,6 +1,6 @@
 #summary Instructions - part 3: Uploading the necessary files
 #labels Phase-Deploy
-[[Create << 2. Creating a configuration file]] [[Run 4. Running the Perl Sitemap Generator >>]]
+[[Create << 2. Creating a configuration file]] | [[Run 4. Running the Perl Sitemap Generator >>]]
 
 ===3. Uploading the necessary files===
 
@@ -12,4 +12,4 @@ You should upload the following files to your web server in a location you can a
 
 The method you use to upload these files depends on your environment. Common methods include FTP and SCP. For more information, contact your web host. 
 
-[[Create << 2. Creating a configuration file]] [[Run 4. Running the Sitemap Generator >>]]
+[[Create << 2. Creating a configuration file]] | [[Run 4. Running the Sitemap Generator >>]]
