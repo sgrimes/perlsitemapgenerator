@@ -1,4 +1,4 @@
-#summary Using the Perl Sitemap Generator
+#summary Overall Instructions for the use of the Perl Sitemap Generator
 #labels Featured,Phase-Deploy
 ===1. Downloading the Perl Sitemap Generator program files===
 The Perl Sitemap Generator files are available in ZIP and GZ archive formats from the following location:
