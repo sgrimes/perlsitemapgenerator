@@ -1,6 +1,6 @@
 #summary Instructions - part 2: Creating a configuration file
 #labels Phase-Deploy
-[Download << 1. Downloading the program files] | [Upload 3. Uploading the necessary files >>]
+[[Download << 1. Downloading the program files]] | [[Upload 3. Uploading the necessary files >>]]
 
 ===2. Creating a configuration file===
 
@@ -349,4 +349,4 @@ To create a Sitemap for XHTML mobile profile (WAP 2.0) content:
 <filter action="drop" type="wildcard" pattern="*.*" />
 }}}
 
-[Download << 1. Downloading the program files] | [Upload 3. Uploading the necessary files >>]
+[[Download << 1. Downloading the program files]] | [[Upload 3. Uploading the necessary files >>]]
