@@ -1,4 +1,4 @@
-#summary Instructions for using the Perl Sitemap Generator
+#summary Instructions for using the Perl Sitemap Generator - part 1
 #labels Featured,Phase-Deploy
 [http://code.google.com/p/perlsitemapgenerator << Project Home] | [Create 2. Creating a configuration file >>]
 
