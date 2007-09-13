@@ -1,5 +1,5 @@
 #summary Instructions for using the Perl Sitemap Generator - part 2
-#labels Featured,Phase-Deploy
+#labels Phase-Deploy
 [Download << 1. Downloading the program files] | [Upload 3. Uploading the necessary files >>]
 
 ===2. Creating a configuration file===
