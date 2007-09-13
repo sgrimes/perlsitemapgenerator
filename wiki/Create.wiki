@@ -33,7 +33,7 @@ In order to create a configuration file for your site, you must have the followi
   #. Delete the sections for the methods you aren’t going to use.
   #. Follow the instructions below for the methods you are going to use.
 
-*URL*
+* {{{URL}}}*
 
   Locate the following section:
   {{{
@@ -158,7 +158,7 @@ In order to create a configuration file for your site, you must have the followi
 <sitemap path="/var/www/docroot/subpath/sitemap*.xml" /> 
   }}}
   The Sitemap Generator extracts all URLs and the optional data listed for each URL for every Sitemap you list and creates one Sitemap with this information. At this time, we can't guarantee that this method will work Sitemaps created with tools other than the Sitemap Generator.
-  #. Locate the filter definition section:
+  8. Locate the filter definition section:
   {{{
   <!-- ********************************************************         
   FILTERS
@@ -195,7 +195,7 @@ they are.
   <!-- Exclude URLs within UNIX-style hidden files or directories -->
   <filter action="drop" type="regexp" pattern="/\.[^/]*" />
   }}}
-  You can use filtering to exclude specific URLs from the generated Sitemap. You might want to do this to create a cleaner list, to reduce redundant listings, or to keep certain URLs from being indexed. Note that if you use a robots.txt file to keep URLs from being indexed, then even if the URLs are included in your Sitemap, Google will not search or index them.
+  You can use filtering to exclude specific URLs from the generated Sitemap. You might want to do this to create a cleaner list, to reduce redundant listings, or to keep certain URLs from being indexed. Note that if you use a [http://www.robotstxt.org/wc/robots.html robots.txt] file to keep URLs from being indexed, then even if the URLs are included in your Sitemap, Google will not search or index them.
 
   You can use any or all of the filtering methods. You can delete the entries you don’t need and can create additional entries, if desired. Below are sample usages.
   {{{
@@ -206,8 +206,8 @@ they are.
   <filter action="pass" type="wildcard" pattern="*.htm*" />
   <filter action="drop" type="wildcard" pattern="*" />
   }}}
-  This filter includes all .htm* files but excludes everything else.
+  This filter includes all {{{.htm*}}} files but excludes everything else.
 
-  #. Once you have made all the changes for your site, save the file.
+  9. Once you have made all the changes for your site, save the file.
 
 [Download << 1. Downloading the program files] | [Upload 3. Uploading the necessary files >>]
