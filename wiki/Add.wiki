@@ -1,5 +1,5 @@
 #summary Instructions for using the Perl Sitemap Generator - part 5
-#labels Featured,Phase-Deploy
+#labels Phase-Deploy
 [Run << 4. Running the Perl Sitemap Generator]
 
 ===5. Adding the generated sitemap===
