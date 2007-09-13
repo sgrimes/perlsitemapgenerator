@@ -159,7 +159,7 @@ In order to create a configuration file for your site, you must have the followi
   }}}
   The Sitemap Generator extracts all URLs and the optional data listed for each URL for every Sitemap you list and creates one Sitemap with this information. At this time, we can't guarantee that this method will work Sitemaps created with tools other than the Sitemap Generator.
 
-8. Locate the filter definition section:
+ 8. Locate the filter definition section:
   {{{
   <!-- ********************************************************         
   FILTERS
@@ -209,6 +209,6 @@ they are.
   }}}
   This filter includes all {{{.htm*}}} files but excludes everything else.
 
-9. Once you have made all the changes for your site, save the file.
+ 9. Once you have made all the changes for your site, save the file.
 
 [Download << 1. Downloading the program files] | [Upload 3. Uploading the necessary files >>]
