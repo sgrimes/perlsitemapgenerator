@@ -1,11 +1,15 @@
-#summary Instructions for using the Perl Sitemap Generator.
+#summary Using the Perl Sitemap Generator.
 #labels Featured,Phase-Deploy
 
-= Introduction =
+{{{*1. Downloading the Sitemap Generator program files*}}}
 
-Preparing page.
+The Sitemap Generator files are available from the following location:
 
+svn checkout http://perlsitemapgenerator.googlecode.com/svn/trunk/ perlsitemapgenerator
 
-= Details =
+Once you download the archive, extract it into a local directory. Locate the following files:
 
-Pending
+    * README —contains the latest information about this tool
+    * sitemap_gen.pl —the perl script that generates your Sitemap
+    * example_config.xml —the template configuration file you'll use to specify the configuration for your site
+    * example_urllist.txt —the template URL list you can use if you wish to create a Sitemap based on a set of URLs that you specify
