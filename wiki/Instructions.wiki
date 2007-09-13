@@ -1,7 +1,7 @@
 #summary Using the Perl Sitemap Generator.
 #labels Featured,Phase-Deploy
 
-{{{*1. Downloading the Sitemap Generator program files*}}}
+*1. Downloading the Sitemap Generator program files*
 
 The Sitemap Generator files are available from the following location:
 
