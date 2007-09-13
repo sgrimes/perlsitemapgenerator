@@ -1,0 +1,10 @@
+#summary Instructions for using the Perl Sitemap Generator
+#labels Featured,Phase-Deploy
+
+This section provides step-by-step instructions for creating a configuration file. It also provides a complete reference of the options available. If you are creating Mobile Sitemaps, see the additional mobile guidelines.
+
+In order to create a configuration file for your site, you must have the following information:
+
+ * The base URL for your site (such as http://www.example.com/). Only URLs that begin with this base URL can be included in the Sitemap. Ensure that you include the protocol (such as http://). For instance, http://www.google.com is a valid base url, but www.google.com is not.
+ * The web server path to the location where you want to store the Sitemap. Generally, this is the path to the base URL as the Sitemap cannot contain URLs that are in a higher-level directory from the location of the Sitemap. When you run the Google Sitemap Generator, it creates the Sitemap and places it in the location you specify.
+  * The methods you want the Sitemap Generator to use to create your Sitemap. You can use any combination of methods. The following methods are available:
