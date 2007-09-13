@@ -12,7 +12,7 @@ In order to create a configuration file for your site, you must have the followi
  * The web server path to the location where you want to store the Sitemap. Generally, this is the path to the base URL as the Sitemap cannot contain URLs that are in a higher-level directory from the location of the Sitemap. When you run the Google Sitemap Generator, it creates the Sitemap and places it in the location you specify.
  * The methods you want the Sitemap Generator to use to create your Sitemap. You can use any combination of methods. The following methods are available:
 
-    * *URL* —list individual URLs in this section of the configuration file, along with information about each URL. You would generally use this method in conjunction with another method to manually include additional URLs that other methods wouldn't pick up.
+    ** *URL* —list individual URLs in this section of the configuration file, along with information about each URL. You would generally use this method in conjunction with another method to manually include additional URLs that other methods wouldn't pick up.
     * *URL list* —point the configuration file to a text file that contains a list of URLs. You might want to use this method if this text file already exists or if you use a script to generate a list of URLs.
     * *Directory paths* —specify the directory paths for your site and corresponding URLs to those paths. The Sitemap Generator will create a list of URLs based on the contents of those directories. You might want to use this method if your site consists of static HTML files.
     * *Access logs* —point to the path to your log files. The Sitemap Generator will create a list of URLs based on the URLs included in the logs. You might want to use this method if your site consists of dynamic pages.
@@ -33,7 +33,8 @@ In order to create a configuration file for your site, you must have the followi
   #. Locate the generation method sections that begin with ** *MODIFY or DELETE* **. Each of these sections corresponds to a method for generating a Sitemap.
   #. Delete the sections for the methods you aren’t going to use.
   #. Follow the instructions below for the methods you are going to use.
-  *URL*
+
+*URL*
 
   Locate the following section:
 
