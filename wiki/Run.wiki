@@ -1,6 +1,6 @@
 #summary Instructions - part 4: Running the Perl Sitemap Generator script
 #labels Phase-Deploy
-[Upload << 3. Uploading the necessary files] | [Add 5. Adding the generated sitemap>>]
+[[Upload << 3. Uploading the necessary files]] | [[Add 5. Adding the generated sitemap>>]]
 
 ===4. Running the Perl Sitemap Generator script (sitemap_gen.pl)===
 
@@ -41,4 +41,4 @@ Any errors in the file will also be returned. For instance, if you leave the url
         }}}
 Correct any errors in your *config.xml* file and re-run the script. If no errors are present, the Sitemap Generator will create a new *sitemap.xml* file in the location you specified in the config file. 
 
-[Upload << 3. Uploading the necessary files] | [Add 5. Adding the generated sitemap>>]
+[[Upload << 3. Uploading the necessary files]] | [[Add 5. Adding the generated sitemap>>]]
