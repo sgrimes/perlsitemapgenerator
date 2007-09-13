@@ -59,7 +59,28 @@ In order to create a configuration file for your site, you must have the followi
   }}}
   This section gives two examples: the first includes only the required attribute and the second includes the required attribute as well as the optional attributes.
 
-  Use this format for each of the URLs you want to include. The changefreq attribute gives Google a general idea of how often the URL is updated. This helps Google know how often to visit the page for new content. The priority attribute gives Google information about the relative importance of this page compared to the other pages of your site. This attribute has no effect on how Google compares your page to pages on other sites, it just helps Google know which pages of your site that you think are most important.
+  Use this format for each of the URLs you want to include. The *changefreq* attribute gives Google a general idea of how often the URL is updated. This helps Google know how often to visit the page for new content. The *priority* attribute gives Google information about the relative importance of this page compared to the other pages of your site. This attribute has no effect on how Google compares your page to pages on other sites, it just helps Google know which pages of your site that you think are most important.
 
+*URL List*
+
+  Locate the following section:
+  {{{
+  <!-- ** MODIFY or DELETE **
+  "urllist" nodes name text files with lists of URLs. 
+  An example file "example_urllist.txt" is provided. 
+
+  Required attributes: 
+  path - path to the file 
+
+  Optional attributes: 
+  encoding - encoding of the file if not US-ASCII 
+  --> 
+  <urllist path="example_urllist.txt" encoding="UTF-8" /> 
+  }}}				
+  Use this format to point to the path and name of the text file that contains your list of URLs. You can use the provided *example_urllist.txt* file as a template for that text file. You can specify either a relative or complete path to your web server. For instance, if the Sitemap Generator and *urlist.txt* file are located in the same directory, you can simply specify the filename of the *.txt* file, If you create a text file with an encoding other than UTF-8, you can use the *encoding* attribute to indicate this encoding. If you have multiple .txt files, you can use wildcards. For instance:
+  {{{
+  <urllist path="example_urllist*.txt" encoding="UTF-8" /> 
+  }}}
+  For each URL you include in the text file, you can specify the last modification date, change frequency, and priority. See the URLlist text file reference section for complete information about the structure of this file. 
 
 [Download << 1. Downloading the program files] | [Upload 3. Uploading the necessary files >>]
